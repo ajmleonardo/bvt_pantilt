@@ -41,9 +41,10 @@ np.set_printoptions(precision=3, suppress=True)
 
 import rospy
 import roslib
-roslib.load_manifest('bvt_pantilt')
+#roslib.load_manifest('bvt_pantilt')
 
 from sensor_msgs.msg import JointState
+#from orientation_msgs.msg import PanTiltOrientation
 from bvt_pantilt.msg import PanTiltOrientation
 
 # topics
@@ -160,13 +161,13 @@ class PanTiltSimulator(object):
         return data
 
 if __name__ == '__main__':
-    rospy.init_node(NODE_NAME)
+    rospy.init_node("NODE_NAME")
     name = rospy.get_name()
 
-    rospy.loginfo("[{}] initializing the node..\n".format(self.name))
+    rospy.loginfo("[{}] initializing the node..\n".format("self.name"))
 
     try:
-        sim = PanTiltSimulator()
+        sim = PanTiltSimulator("self.name")
         rospy.spin()
     except rospy.ROSInterruptException:
         pass

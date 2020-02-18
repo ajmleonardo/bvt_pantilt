@@ -42,7 +42,7 @@ from serial import Serial, SerialException
 
 
 SERIAL_DEFAULT = {
-    'port': '/vdev/tty_pantilt',
+    'port': '/dev/ttyUSB0',
     'baudrate': 9600,
     'bytesize': serial.EIGHTBITS,
     'parity': serial.PARITY_NONE,

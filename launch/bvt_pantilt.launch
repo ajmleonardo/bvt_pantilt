@@ -35,6 +35,8 @@ POSSIBILITY OF SUCH DAMAGE.
 
 -->
 
+
+
 <launch>
 		
 	<!-- start the pantilt driver -->
@@ -43,7 +45,7 @@ POSSIBILITY OF SUCH DAMAGE.
 		<!--   serial_port: device to access -->
 		<!--   offset_pan: compensation for pan misalignment (degrees) -->
 		<!--   offset_tilt: compensation for tilt misalignment (degrees) -->
-		<param name="serial_port" value="/vdev/tty_pantilt" type="string"/>
+		<param name="serial_port" value="/dev/ttyUSB0" type="string"/>
 		<param name="offset_pan" value="0" type="int"/>
 		<param name="offset_tilt" value="0" type="int"/>
 	</node>

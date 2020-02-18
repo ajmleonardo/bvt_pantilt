@@ -36,7 +36,7 @@
 
 import roslib
 import rospy
-roslib.load_manifest('bvt_pantilt')
+#roslib.load_manifest('bvt_pantilt')
 
 import numpy as np
 import time
@@ -264,7 +264,7 @@ def main():
             verbose = True
 
     # load parameters
-    serial_port = rospy.get_param('~/serial_port', default='/vdev/tty_pantilt')
+    serial_port = rospy.get_param('~/serial_port', default='/dev/ttyUSB0')
 
     try:
         op = int(rospy.get_param('~/offset_pan', default=OFFSET_PAN))
