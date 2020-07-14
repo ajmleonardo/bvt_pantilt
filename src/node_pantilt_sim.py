@@ -44,7 +44,6 @@ import roslib
 #roslib.load_manifest('bvt_pantilt')
 
 from sensor_msgs.msg import JointState
-#from orientation_msgs.msg import PanTiltOrientation
 from bvt_pantilt.msg import PanTiltOrientation
 
 # topics

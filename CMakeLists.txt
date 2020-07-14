@@ -2,11 +2,9 @@ cmake_minimum_required(VERSION 2.8.3)
 project(bvt_pantilt)
 
 find_package(catkin REQUIRED COMPONENTS
-  roscpp
   rospy
   std_msgs
   message_generation
-  geometry_msgs
 )
 
 add_message_files(
@@ -14,20 +12,12 @@ add_message_files(
   PanTiltOrientation.msg
  )
 
-
-generate_messages(
-  DEPENDENCIES
-  std_msgs 
-  geometry_msgs 
-  
+generate_messages( #Required for the service's message
+   DEPENDENCIES
+   std_msgs
  )
 
-catkin_package(
-  CATKIN_DEPENDS roscpp rospy  message_runtime std_msgs geometry_msgs
-)
+catkin_package()
 
-include_directories(
-# include
-  ${catkin_INCLUDE_DIRS}
-)
+
 

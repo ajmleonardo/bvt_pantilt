@@ -73,7 +73,7 @@ class PanTiltDriver(object):
         # default settings
         self.PAN_BRAKE_DEFAULT = 100
         self.TILT_BRAKE_DEFAULT = 110
-
+        
         # initialize pan with fail-safe values
         self.pan_pos = 500
         self.pan_req_pos = 500
@@ -232,6 +232,8 @@ class PanTiltDriver(object):
     # protocol actions
     def set_position(self, node, pos):
         cmd = '{0}p{1:03d}'.format(node[0], pos)
+	print("###")	
+	print(cmd)
 
         try:
             self._send_command(cmd)
@@ -250,7 +252,23 @@ class PanTiltDriver(object):
 
         cmd = '{0}s{1:03d}'.format(node[0], value)
         self._send_command(cmd)
+    
+    
+    def set_azimuth_velocity(self, velocity): ######
 
+        value = velocity*2
+        print(value)
+
+        cmd = '{0}m{1:03d}'.format('A', int(value))
+        self._send_command(cmd)
+
+    def set_elevation_velocity(self, velocity): ######
+
+        value = velocity*2
+        print(value)
+
+        cmd = '{0}m{1:03d}'.format('B', int(value))
+        self._send_command(cmd)
 
     # unit requests
     def get_pan_angle(self):
